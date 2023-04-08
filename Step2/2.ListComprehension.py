@@ -13,3 +13,11 @@ print(new_list1)
 new_list2 = [num*2 if num%2 ==0 else num for num in numbers]
 #odd number will return same but even will be double
 print(new_list2)
+
+name = "Bo"
+students = ["Bo Bo","Aye Min","Min Min","Aye Myat","Ko Aung","Aung Aung"]
+#              0        1         2        3           4         5
+# Bo Bo
+# 01234
+new_name_list = [name for name in students if name[2] == " "]
+print(new_name_list)
