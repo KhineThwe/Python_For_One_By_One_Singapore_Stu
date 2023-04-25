@@ -4,7 +4,6 @@ def myFun(*arg):
     print(arg)#return tuple
     for d in arg:
         print(d)
-
 myFun(4,5,6,7,8)
 
 def myFun2(a,b,c,*args):
