@@ -6,6 +6,7 @@ def power(a,b):
     """Return arg1 raised to power arg2"""
     """
       Return arg1
+      
     """
     return a**b
 print(power.__doc__)
