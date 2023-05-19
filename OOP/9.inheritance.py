@@ -1,7 +1,13 @@
 """
-Multiple Inheritance
-Mult-level Inheritance
+Types of Inheritance in Python
+--------------------------------------
+1.Single Inheritance
+2.Multiple Inheritance
+3.Multi-level Inheritance
+4.Hierarchical Inheritance
+5.Hybrid Inheritance
 """
+#Single Inheritance
 class Machine:
     def __init__(self,id):
         self.id = id

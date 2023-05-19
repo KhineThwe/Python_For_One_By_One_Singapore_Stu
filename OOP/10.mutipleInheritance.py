@@ -18,6 +18,8 @@ class Flyable:
         print(f'{self.name} is flying')
 
 class Bird(Animal,Flyable):
+    #Bird ---> Derived Class
+    #Animal,Flyable ---> Base Class
     def __init__(self,name):
         super().__init__(name)
 
