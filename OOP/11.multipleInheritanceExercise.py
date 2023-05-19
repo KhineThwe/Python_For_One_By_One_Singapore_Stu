@@ -1,5 +1,5 @@
 """
-Vehicle
+Vehicle Exercise
 """
 class Vehicle:
     def __init__(self,brand):
@@ -33,7 +33,6 @@ class Car(Vehicle):
 class Airplane(Vehicle,FlyingVehicle,ModernVehicle):
     def __init__(self,brand):
         super().__init__(brand)
-
 
 if __name__ == '__main__':
     airplance = Airplane("Toyota")
