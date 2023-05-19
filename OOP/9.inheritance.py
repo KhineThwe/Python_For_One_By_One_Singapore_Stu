@@ -1,3 +1,7 @@
+"""
+Multiple Inheritance
+Mult-level Inheritance
+"""
 class Machine:
     def __init__(self,id):
         self.id = id
@@ -18,8 +22,13 @@ class Car(Machine):
     def stop(self):
         print("Car stopped")
 
+    def changeGear(self):
+        print("Gear Changed")
+
+
 if __name__ == '__main__':
     car = Car(1)
     car.start()
     car.stop()
+    car.changeGear()
 
