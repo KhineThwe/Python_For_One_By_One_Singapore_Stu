@@ -4,7 +4,7 @@ protected ---> _varname
 """
 class Parent:
     def __init__(self,age):
-        self.it   = age
+        self._age = age
 
     def getData(self):
         print(self._age)
@@ -14,8 +14,8 @@ class Sub(Parent):
         print(self._age)
 
 if __name__ == '__main__':
-    # sub = Sub(21)
-    # sub.getData()
+    sub = Sub(21)
+    sub.getData()
 
     # parent = Parent(21)
     # parent.getData()
