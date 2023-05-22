@@ -5,3 +5,8 @@ if __name__ == '__main__':
     print(machine.count)
     print(machine._color)
     print(machine._Machine__name)#acessing private variable like this
+
+    #name mangling
+    """
+    _ClassName__privateVarName
+    """
