@@ -1,5 +1,7 @@
 import zope.interface
-"""In interface class ---> all methods of an interface are abstract---> slow"""
+"""In interface class ---> all methods of an interface are abstract---> slow
+--> pip install zope.interface
+"""
 class MyInterface(zope.interface.Interface):
     # x = zope.interface.Attribute("python")
     def method1(self):
