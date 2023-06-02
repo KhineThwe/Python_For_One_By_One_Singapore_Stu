@@ -24,6 +24,7 @@ class Rectangle(Shape):
 class Circle(Shape):
     def calculate_area(self,radius):
         return 3.14 * radius * radius
+
 if __name__ == '__main__':
     rectangle  = Rectangle()
     circle = Circle()
