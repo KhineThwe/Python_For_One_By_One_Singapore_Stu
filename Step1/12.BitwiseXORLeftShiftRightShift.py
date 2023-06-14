@@ -18,7 +18,7 @@ print("XOR result: ",c)
 #Left shift <<
 #value increase
 #ညာဘက်ကနေ 0 ဝင်မယ်။
-# int data 32 bits
+# int data.txt 32 bits
 x = 20
 y = x << 4
 print("After left shift: ",y)

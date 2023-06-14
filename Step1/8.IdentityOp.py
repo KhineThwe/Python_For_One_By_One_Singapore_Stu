@@ -1,5 +1,5 @@
 #Identity op ---> is,is not -----> if they are equal memory address
-#if int dat type,string data types ---->
+#if int dat type,string data.txt types ---->
 #list [] ----> they are equal but not identical.
 a1 =5
 a2 = 5
