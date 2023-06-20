@@ -17,7 +17,7 @@ def recording_all_data():
            password = onlinedb[i]["password"]
            phone = onlinedb[i]["phone"]
            age = onlinedb[i]["age"]
-           total_user_data = email + ' '+user_name + ' '+password+' '+str(phone)+' '+str(age)+'\n'
+           total_user_data = str(i) + ' ' + email + ' '+user_name + ' '+password+' '+str(phone)+' '+str(age)+'\n'
 
            dbfile.write(total_user_data)
            print("data: ",email,user_name,password,phone,age)
@@ -25,20 +25,24 @@ def recording_all_data():
 
 readdb = {}
 def loading_data_from_file():
+
     with open("onlinedb.txt","r") as dbfile:
         datas = dbfile.readlines()
         for one in datas:
             oneData = one.split(" ")
 
-            id = one
-            data_form = {
-                id:{"email":oneData[0],"u_name":oneData[1],"password":oneData[2],
-                    "phone":oneData[3],"age":oneData[4]
-                    }
-            }
-            readdb.update(data_form)
-    print(readdb)
-
+            if len(oneData) >= 6:
+                id = oneData[0]
+                data_form = {
+                    id: {"email": oneData[1], "u_name": oneData[2], "password": oneData[3],
+                         "phone": oneData[4], "age": oneData[5].rstrip("\n")  # Remove the newline character
+                         }
+                }
+                readdb.update(data_form)
+    return readdb
 
 if __name__ == '__main__':
-    loading_data_from_file()
+    # recording_all_data()
+    readdb = loading_data_from_file()
+    print(readdb)
+
