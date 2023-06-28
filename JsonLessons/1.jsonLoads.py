@@ -28,6 +28,6 @@ myJson = """
     "hobby" : ["coding","training","building IOT"]
 }
 """
-data = json.loads(myJson)#Encoding
+data = json.loads(myJson)#Decoding
 print(data)
 print(type(data))
