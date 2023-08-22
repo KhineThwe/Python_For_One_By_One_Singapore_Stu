@@ -22,7 +22,7 @@ class CustomEncoder(json.JSONEncoder):
 
 class Database:
     def __init__(self,file_path):
-        self.file_path = file_path
+        self.file_path = file_path#data.db
 
     def add_user(self,user):
         users = self.load_data()

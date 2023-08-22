@@ -1,11 +1,17 @@
 from user import Customer,Seller
 from product import PhysicalProduct,DigitalProduct
 from cart import ShoppingCart
+from database import Database
 
 if __name__ == '__main__':
+    db = Database("data.db")
     #Create users
     customer = Customer("John","john@gmail.com","john")
     seller = Seller("Smith","smith@gmail.com","smith")
+
+    #Add users to db
+    db.add_user(customer)
+    db.add_user(seller)
 
    #Create products
     laptop = PhysicalProduct("Laptop",99.99,5)
@@ -21,6 +27,8 @@ if __name__ == '__main__':
     cart.add_item(ebook)
 
     customer.checkout()
+
+    db.save_order(customer,cart)
 
 
 
