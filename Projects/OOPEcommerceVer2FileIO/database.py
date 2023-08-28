@@ -31,8 +31,16 @@ class Database:
 
     def save_order(self,customer,cart):
         orders = self.load_data()
-        orders.append({"customer": customer.name, "cart": [(item[0].name,item[1])for item in cart.items]})
+        orders.append({"customer": customer.name,
+                       "cart": [(item[0].name,item[1])for item in cart.items]})
         self.save_data(orders)
+
+    #get_orders
+    def get_orders(self):
+        orders = self.load_data()
+        if isinstance(orders,list):
+            return orders
+        return []
 
     def load_data(self):
         try:
@@ -47,5 +55,9 @@ class Database:
 
 
     def save_data(self,data):
-        with open(self.file_path,"w") as file:
-            json.dump(data,file,cls=CustomEncoder)
+        try:
+            with open(self.file_path, "w") as file:
+                json.dump(data, file, cls=CustomEncoder)
+            print("Data saved successfully")
+        except Exception as e:
+            print(f"Failed to save data: {str(e)}")

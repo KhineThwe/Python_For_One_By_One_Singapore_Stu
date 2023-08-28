@@ -2,9 +2,11 @@ from user import Customer,Seller
 from product import PhysicalProduct,DigitalProduct
 from cart import ShoppingCart
 from database import Database
+from order import *
 
 if __name__ == '__main__':
     db = Database("data.db")
+    order_manager = OrderManager(db)
     #Create users
     customer = Customer("John","john@gmail.com","john")
     seller = Seller("Smith","smith@gmail.com","smith")
@@ -26,9 +28,24 @@ if __name__ == '__main__':
     cart.add_item(laptop,2)
     cart.add_item(ebook)
 
-    customer.checkout()
+    #Place an order
+    order_manager.place_order(customer,cart)
 
-    db.save_order(customer,cart)
+    #Retrieve and display orders
+    orders = db.get_orders()
+    print("Orders: ")
+    for order_data in orders:
+        customer_name = order_data.get("customer")
+        if customer_name:
+            print(f"Customer: {customer_name}")
+            for item in order_data.get("cart",[]):
+                product_name,quantity = item
+                print(f"Products: {product_name},Quantity: {quantity}")
+            print()
+        else:
+            print("Invalid order data format")
+
+
 
 
 
